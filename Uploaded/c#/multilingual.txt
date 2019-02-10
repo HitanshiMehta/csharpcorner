@@ -1,0 +1,27 @@
+Q.How .Net is is known as multilingual application development technology.
+
+A multilingual applicaiotn is application which can deployed in many different language.
+
+CLR
+.Net framework is multilingual applicaiotn beacause of CLR.
+Basically, CLR is key of .NET framework.
+Main task of CLR is to convert compiled code into native code.
+.NET framework has one or more compiler for eg. VB.NET,c#,c++,jscript or any third party compiler as COBOL
+Any one of this compiler convert your source code into Microsoft Intermediate Language(MSIL).Then JIT(Just In Time) of CLR convert this MSIL code into native code using metadata which is then executed by OS.
+CLR stands for common language runtime.Common language run code and provide other services as memmory management,thread management,remoting and other security as CTS and CLS
+CLR is layer between operating system and .net language which use CTS and CLS to create code.
+
+CTS
+CTS stands for common type system. CTS define rules that common language runtime follows when we are declaring,using and managing type.CTS deal with data type.
+.Net support many languages and each and every language have its own data type.Other languages can not understand data types of other.
+For example: When we are creating application in C# we have int and when we are creating application in vb.net we have integer.So here CTS come in light,After compilation CTS convert int and integer into int32 structure.
+
+CLS
+CLS stands for common language specification.
+CLS is subset of CTS and it declare all the rule and restrication that all language under .net framework must follow.
+The language which follow this rules are known as CLS complaint.
+For example: We can use multiple inheritance in c++ but when we use the same code in c# it create problem because c++ dosen't support multiple inheritance.So CLS restict multiple inheritance for all language.
+One another rule is that you can not have memeber with same name and different case.
+In c# add() and Add() are diffrent because it is case sensitive language but problem arise when we use thi code into vb.net becasue it is not cas-sensitive and it consider add() and Add() as same.
+
+

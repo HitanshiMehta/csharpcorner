@@ -1,0 +1,77 @@
+Q.What is Dependency Injection?
+In real world we have situation where one class have dependenct on other class.
+For example if we are creating Mobile class we have dependency on RAM class. In normal scenario we will create instance of RAM class in Mobile class using new keyword so we can use all function of RAM class in Mobile class.
+Public class RAM
+{
+	int spped=20;
+	public RAM(int speed)
+	{
+		this.speed=speed;
+	}
+}
+public class Mobile
+{
+	private RAM r1;
+	public Mobile()
+	{
+		RAM r1=new RAM(2);
+	}
+}
+
+In this example we have created instance r1 Of RAM by calling parameterized constructor in mobile class.
+But there are three fundamental problem in this programming style.
+1)This code is difficult to maintain over time.
+	It works good untill we don't have any change in dependent class.
+	For example it will work good untill RAM class is same but in future if we change RAM class then it is necessary to make change in mobile class.
+	Public class RAM
+	{
+		int spped=20,size=2;
+		public RAM(int speed,int size)
+		{
+			this.speed=speed;
+			this.size=size;
+		}
+	}
+	public class Mobile
+	{
+		private RAM r1;
+		public Mobile()
+		{
+			RAM r1=new RAM(2);
+		}
+	}
+	So, now Mobile class will give compilation error because it need 2 parameter while creating instance and we are passing only 1 parameter.
+	So, Evertime RAM class changes Mobile class also needed to change and it will create big issue if we are using RAM class in many other classes or we have dependecy on many other classes like display,Battery etc. and in turn this classes may have dependecy on other classes so if any time this dependency change Mobile class may need to change.
+	Hence, this code is difficult to maintain overtime.
+SOLUTION:
+	Public class RAM
+	{
+		int spped=20;
+		public RAM(int speed)
+		{
+			this.speed=speed;
+		}
+	}
+	public class Mobile
+	{
+		private RAM _r1;
+		public Mobile(RAM r1)
+		{
+			_r1=r1;
+		}
+	}
+	In Dependency Injection Mobile class is not directly creating instance of RAM class(without using new keyword).Instead it is just specify it have dependecy on RAM class using it is constructor.Now external source is going to create instance of RAM class and provide it to Mobile class whenever required.So now we have extrenal source which is creating and injecting dependency to MObile class and Mobile class don't need to change when dependent class change.
+2)Instances of dependecies created by class are local to class and can't share  data and logic.	
+	In our example r1 instance of RAM is local to Mobile class and we can't share it with other class.In this case if we want dependency of RAM class in 5 class then we will end up by creating 5 instance of RAM class.By ding this data and functionality will be local to particular class and can not be shared by other classes.
+SOLUTION:
+	Dependency Injection provide singleton. It means whenever first time instance of class is requested external source will check whether it already have instance of class or not.If it dosen't have instance then it will create instance and inject it into class. Second time it will not create new instance instead it will inject old instance in new requested class.
+	So, with help of dependecy Injection sharing data and logic become much easy.
+3)Hard to unit test without Dependency Injection.
+	In our example Mobile class have only one dependecy but in real world one class have many dependecy and which in turn have other dependecy.With all this hierarchy of dependecy unit testing become difficult.
+SOLUTION:
+	With Dependency Injection it is very easy to mock all this dependecy.
+	
+	
+	
+
+
