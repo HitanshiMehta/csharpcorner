@@ -1,0 +1,16 @@
+What is JPA?
+
+JPA stands for Java Persistance API.
+
+Why we need JPA?
+
+In today's world we are working with data. All the application are storing data in database or file. Most of application choose databse to store data in which we have row and column. Here problem arise, in application we have object and in database we have row and column so while using JDBC we fetch single value and store it in database. In this scenario we can use ORM. ORM stands for object relation model. In ORM we have class, where class name have same name as table name and property are same as database column. So ORM solve problem by allowing to store entire object rathen than fetching single values and storing it.
+
+What is advantage of JPA?
+
+Basically in JPA we follow ORM standard. In ORM we have different tools such as
+ORM tools
+1)Hibernate
+2)iBatis
+3)TopLink
+Now as you have different tools, as application grews, you might decide to switch from one tool to other tool according to requirement or according of facility other tool are providing. Earlier it was not possible because all tools were having their independent implementation. In this sitution sun microsoft intoduce JPA which make sure that all tools are having commomn specification. So now if you want to switch then it is easier because all tools are implementing same specificaition.So, basucally JPA provide specification and we need tools for implementation.
