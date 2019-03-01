@@ -1,0 +1,3 @@
+what is jstl/el
+
+JSTL stands for JSP Standard Tag library. JSTL allow us to convert java code into html code which is simliar to html and easier option than JSP and servlets. we have different tags in JSTL for which we need to include library in our form.

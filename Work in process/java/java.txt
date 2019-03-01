@@ -1,0 +1,42 @@
+Localosation using JSTL
+JSTL/EL XML tags
+
+validation in JSF
+JSF lifecycle
+converters in JSF
+listeners of servlet and JSF
+validators
+custome component
+
+
+timer and sheduler in EJB
+JMS in EJB
+EJB transaction
+
+jpa ne to one, many to one, many to many
+
+security in java EE.form authentication
+request and response interceptors
+entities for various DDL,DML and DTL
+navigational directives in JSP
+
+persistance context.entity manager
+asynchronous bean
+ejb callback
+local and remote bean
+JNDI in enterprise application
+atomicity in trnsaction
+persistance unit
+message bean-publish and subsciber
+singleton bean
+
+
+
+
+
+
+
+
+
+
+

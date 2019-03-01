@@ -1,0 +1,43 @@
+What is servlet?
+
+Servlet stands for Server componet where 'serv' means server and let' means component. servlet is java file which can take request from client, process request and provide html page to client.
+
+How servlet works?
+
+We have two type page. First is static page and second is dynamic page. In static page client request for page to server and server send it to client but in case of dynamic page whenever client request for page to server, server build page with help of web container. 
+
+How web container build page?
+
+Servlet are .java file and we need response in .html format. To convert .java file into .html file we have deploymnet descriptor(web.xml) in which we map request with servlet. We can map request to servlet with help of servlet tag and servlet mapping tag. In servlet tag we specify class name and in servlet mapping tag we have to specify url pattern. 
+
+Lifecycle of servlet
+
+1) init()
+
+init method is called only once when servlet is created .Whenever web browser call servlet this method is invoked. We can perform any initialization task here. WE can override init method as follow.
+	public void init() throws ServletException
+	{
+		//initialzation code
+	}
+We can create database connection, open file and any other initializtion task needed for servlet. 
+2)service
+
+This is most important stage of any servlet. Service is main method of servlet which perform actual task. Service method will handle any method requested by web browser. Whenver user request for method service check http request type(get,post,delete,put) and accordingly call doGet, doPost etc. This method is invoked again and again when user request for different method.
+
+3)Destroy()
+
+Destroy() is called only once at end of servlet lifecycle. We can perform any clean up code as closing database connection, freeing thread and cookies, closing file etc. 
+we can override this method as follow
+public void destroy()
+{
+	//cleanup code
+}
+
+If we have JSP than why servlet is needed?
+
+We can create JSP but we can not run JSP. Servlet can not run JSP. Advantage of JSP is it is easier than servlet. When we writr JSP page it is converted into servlet page. When JSP page is converted into servlet, For conversation JSP(JSP container) will provide request, response, PrintWriter, session object which are known as implicit object of JSP. 
+
+
+
+
+

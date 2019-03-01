@@ -1,1 +1,57 @@
 What is JSP?
+
+java server pages are an extension of java servlets which allow you to develop dynamic web pages. JSP is a server side scripting language whihch is very similar to ASP or PHP.
+
+Why JSP in nedded?
+
+In servlet we have to create class, we have to extend class, we have to make method which take arguments, then we have to create object of PrintWriter and we have to write our html code in out.println. In initial stage it is okay but if we wish to create website then it will be terrifying. As solution we have JSP. In JSP we have impicit objects. In servlet we write html code inside java but in JSP we write java code inside html. <% %> will help to add java code in html page. Any code written between <% %> is known as scriptlet. It allow to seprate dynamic code from presentation code.
+
+what are some basic difference between jsp and servlet?
+
+Servlet programming involves extensive programming. In servlet we tie up two file, first is html file which contain static content and java file which contain dynamic contenet to seprate presentation layer and bussiness logic. Now as two files are tie up, any changes neeed recompilation of servlet because there is not any separate identification of static content and dynamic content.
+
+On other hand JSP allow programmer to embedded java code into html code. We can also have different file for html and java but any changes mage to html will be automatically compiled and loaded into servlet. As JPS allow seprate placement of html and java it allow web designer and web developer to work independently.
+
+
+Architecture of JSP
+
+To process JSP pages, a web server needs a JSP container and a servlet engine. The JSP container is responsible for intercepting requests for JSP pages. It works with web server to provide the runtime enviroment and other services a JSP needs. It understand speical element that are part of JSP needs. Apache and glassfish have a built in JSP container and servlet engine. 
+
+JSP processing(request-response lifecyrcle of jsp)
+
+Whenever user request for jsp page web server recognize it by .jsp extnestion and forward request to a JSP container. JSP container load JSP page and it also convert JSP page in servlet. In convesation process all html is converted into out.write() and JSP element are converted into java code. After that JSP compiler compiles servlet into executable class and forward it to servlet engine. Servlet engine generate static html and send it to web browser. Web browser will render it as it render any ohter static html page.
+
+Tags in JSP(JSP Scripting element)
+
+We have four type of tags in JSP.
+
+1)Directive
+we use <%@ %> for importing package. Syntax for importing package is as follow:
+<%@page import="java.util.Date"%>
+For importing multiple package we can seprate pacakge name by comma. For example
+<%@page import="java.util.Date,java.io.IOException"%>
+
+2)Declaration
+We use <%! %> for declaration which will be inside class but outside service method.
+
+3)Sciptlet 
+Any code placed between <% %> will be consider as java code.
+
+4)Experssion
+Code placed within <%= %> will print values of variable and methods.In expression tag statement should not end with semicolon.
+
+JSP life cycle
+ 1)initialization(jspinit())
+ 	After initialization ServletConfig and ServletContext object become accessible to JSP class.
+ 2)Main logic(_jspservice())
+ 3)shut down(jspDestroy()) 
+
+Why servlet is needed?
+
+We can only create JSP but we can not run JSP. Servlet can not run JSP. So even if you writr JSP page it is converted into servlet page. Only advantage of JSP is it is much easier than servlet. Whenever JSP page is converted into servlet, JSP(nedd to confirm(may be container)) will provide request, response, PrintWriter, session object which are known as implicit object of JSP. 
+
+
+
+
+
+
